@@ -1,0 +1,30 @@
+{
+  "action": {
+    "default_popup": "src/popup/index.html"
+  },
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "host_permissions": [
+    "*://*/*"
+  ],
+  "manifest_version": 3,
+  "name": "fl-canva",
+  "options_page": "src/options/index.html",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "version": "1.0.0",
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "resources": [
+        "src/content-script/index.ts"
+      ]
+    }
+  ]
+}
