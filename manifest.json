@@ -6,11 +6,23 @@
     "service_worker": "src/background/index.ts",
     "type": "module"
   },
+  "content_scripts": [
+    {
+      "all_frames": true,
+      "js": [
+        "src/content-script/index.ts"
+      ],
+      "matches": [
+        "*://*/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
   "host_permissions": [
     "*://*/*"
   ],
   "manifest_version": 3,
-  "name": "fl-canva",
+  "name": "chrome-extension",
   "options_page": "src/options/index.html",
   "permissions": [
     "storage",
